@@ -1,0 +1,441 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: linear-gradient(180deg, #323232 0%,#0D7377 100%);  
+  margin-bottom: 5rem;
+}
+
+
+/* navv */
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #323232;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* navv */
+
+.card {
+  width: 500px;
+  height: 600px;
+  transition: all 0.2s;
+  position: relative;
+  margin-top: 5rem;
+  margin-left: 32.5rem;
+  background-color: black;
+  border-radius: 25px;
+}
+
+.card-inner {
+  width: inherit;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.629);
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+}
+
+.circle {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  position: absolute;
+  animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+  top: -70px;
+  left: -70px;
+  background: radial-gradient(#2ebabe, #323232);
+}
+
+.circle:nth-child(2) {
+  bottom: -70px;
+  right: -70px;
+  animation-name: move-down1;
+  background: radial-gradient(#2ebabe, #323232);
+}
+
+@keyframes move-up6 {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes move-down1 {
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #17171700;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+}
+
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+.field {
+  direction: rtl;
+  border-radius: 25px;
+  padding: 0.6em;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fffefe;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+}
+
+button {
+  cursor: pointer;
+  margin: 0.5rem;
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button1 {
+  padding: 0.1rem;
+}
+
+button:hover {
+  background-color: rgba(34, 255, 0, 0.632);
+  color: white;
+}
+
+.button3:hover {
+  background-color: rgba(255, 0, 0, 0.679);
+  color: white;
+}
+
+@media (max-width: 350px) {
+  .card {
+    width: 400px;
+    height: 470px;
+    transition: all 0.2s;
+    position: relative;
+    margin-top: 7rem;
+    margin-left: 6.5rem;
+    margin-bottom: 12rem;
+}
+.btn {
+  display: flex;
+flex-wrap: wrap;
+}
+button{
+  margin: .1rem;
+  padding: 0.1rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+}
+.button1 {
+  padding-left: .2rem;
+}
+.form{
+  gap: 40px;
+}
+
+
+}
+@media (min-width: 350px) {
+  .card {
+    width: 400px;
+    height: 470px;
+    transition: all 0.2s;
+    position: relative;
+    margin-top: 7rem;
+    margin-left: 6.5rem;
+    margin-bottom: 12rem;
+}
+.btn {
+  display: flex;
+flex-wrap: wrap;
+}
+button{
+  margin: .1rem;
+  padding: 0.1rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+}
+.button1 {
+  padding-left: .2rem;
+}
+.form{
+  gap: 40px;
+}
+
+
+}
+
+
+
+@media (min-width: 768px) {
+  .card {
+    width: 550px;
+    height: 480px;
+    margin-top: 10rem;
+    margin-left: 7.5rem;
+    margin-bottom: 15rem;
+  }
+
+  .form{
+    gap: 40px;
+  }
+  .button1{
+    margin: 0.2rem;
+    padding: 0.3em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button2{
+    margin: 0.2rem;
+    padding: 0.3em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button3{
+    margin: 0.2rem;
+    padding: 0.3em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+}
+
+
+@media (min-width: 850px) {
+  .card {
+    width: 500px;
+    height: 510px;
+    margin-top: 10rem;
+    margin-left: 10rem;
+  }
+
+  .field{
+    margin-top: 3rem;
+  }
+  .form{
+    gap: 20px;
+  }
+  .button1{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button2{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button3{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .card {
+    width: 470px;
+    height: 550px;
+    margin-top: 4rem;
+    margin-left: 23.5rem;
+  }
+  .form{
+    gap: 25px;
+  }
+  .button1{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button2{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button3{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+
+}
+
+
+@media (min-width: 1200px) {
+
+  .card {
+    width: 500px;
+    height: 550px;
+    margin-top: 9rem;
+    margin-left: 27.5rem;
+    margin-bottom: 8rem;
+  }
+  .form{
+    gap: 30px;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .card {
+    width: 500px;
+    margin-left: 32.5rem;
+    margin-top: 5rem;
+  }
+
+  .button1{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button2{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+  .button3{
+    margin: 0.2rem;
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+  }
+}
